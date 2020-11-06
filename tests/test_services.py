@@ -1,9 +1,9 @@
-"""Test case for test_template."""
-from test_template import __version__
-from test_template.module import ModuleClass1
-from test_template.module import ModuleClass2
+"""Test case for services."""
+from services import __version__
+from services.module import ModuleClass1
+from services.module import ModuleClass2
 # for mock
-from test_template.module import requests
+from services.module import requests
 
 
 def test_version():
@@ -11,7 +11,7 @@ def test_version():
 
 
 def test_demo_fixture(db_conn):
-    """Demo for pytest fixture."""
+    """Demo for user define pytest fixture."""
     assert db_conn.port == '5432'
 
 
