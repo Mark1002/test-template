@@ -1,4 +1,5 @@
 """Test case for services."""
+import pytest
 from services import __version__
 from services.module import ModuleClass1
 from services.module import ModuleClass2
@@ -33,6 +34,18 @@ class TestModuleClass1:
         total = self.obj.add_two_number(n1, n2)
         # then
         assert total == 100
+
+    @pytest.mark.parametrize(
+        "n1, n2, result",
+        [
+            (3, 3, 9),
+            (8, 7, 56),
+            (7, 9, 63)
+        ]
+    )
+    def test_multiply_two_number(self, n1: int, n2: int, result: int):
+        """multiple parameter unit test."""
+        assert self.obj.multiply_two_number(n1, n2) == result
 
 
 class TestModuleClass2:
